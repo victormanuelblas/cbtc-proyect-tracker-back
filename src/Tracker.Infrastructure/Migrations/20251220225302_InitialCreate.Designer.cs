@@ -11,8 +11,8 @@ using Tracker.Infrastructure.Persistence.Context;
 namespace Tracker.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251220133305_SeedCustomerTypes")]
-    partial class SeedCustomerTypes
+    [Migration("20251220225302_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,18 +38,6 @@ namespace Tracker.Infrastructure.Migrations
                     b.HasKey("CustomerTypeId");
 
                     b.ToTable("customer_types", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            CustomerTypeId = 1,
-                            Description = "Individual"
-                        },
-                        new
-                        {
-                            CustomerTypeId = 2,
-                            Description = "Company"
-                        });
                 });
 
             modelBuilder.Entity("ShipmentStatus", b =>

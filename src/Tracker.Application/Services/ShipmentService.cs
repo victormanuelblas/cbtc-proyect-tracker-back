@@ -20,7 +20,26 @@ namespace Tracker.Application.Services
 
         public async Task<ShipmentDto> CreateShipmentAsync(CreateShipmentDto createShipmentDto)
         {
+            // Validate related entities exist to avoid FK violations at DB level
+            var customer = await _unitOfWork.CustomersRepository.GetCustomerByIdAsync(createShipmentDto.CustomerId);
+            if (customer == null)
+            {
+                throw new NotFoundException(createShipmentDto.CustomerId, "Customer");
+            }
+
+            var user = await _unitOfWork.UsersRepository.GetUserByIdAsync(createShipmentDto.UserId);
+            if (user == null)
+            {
+                throw new NotFoundException(createShipmentDto.UserId, "User");
+            }
+
             var shipment = _mapper.Map<Shipment>(createShipmentDto);
+            // Ensure non-nullable DB column `received_by` gets a non-null value
+            if (string.IsNullOrWhiteSpace(shipment.Receivedby))
+            {
+                shipment.Receivedby = string.Empty;
+            }
+
             await _unitOfWork.ShipmentsRepository.SaveShipmentAsync(shipment);
             await _unitOfWork.CommitTransactionAsync();
             return _mapper.Map<ShipmentDto>(shipment);

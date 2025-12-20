@@ -45,6 +45,7 @@ namespace Tracker.Infrastructure.Persistence.Configurations
             builder.Property(s => s.ShipmentStatusId)
                 .HasColumnName("shipment_status_id")
                 .IsRequired();  
+
             builder.Property(s => s.Receivedby)
                 .HasColumnName("received_by")
                 .HasMaxLength(100);

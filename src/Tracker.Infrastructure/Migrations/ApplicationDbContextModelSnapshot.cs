@@ -35,18 +35,6 @@ namespace Tracker.Infrastructure.Migrations
                     b.HasKey("CustomerTypeId");
 
                     b.ToTable("customer_types", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            CustomerTypeId = 1,
-                            Description = "Individual"
-                        },
-                        new
-                        {
-                            CustomerTypeId = 2,
-                            Description = "Company"
-                        });
                 });
 
             modelBuilder.Entity("ShipmentStatus", b =>

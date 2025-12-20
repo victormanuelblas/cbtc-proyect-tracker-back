@@ -6,12 +6,12 @@ public class Shipment
     public int CustomerId { get; set; }
     public int UserId { get; set; }
     public string TrackingNumber { get; set; } = null!;
-    public DateTime ShippedAt { get; set; }
+    public DateTime ShippedAt { get; set; } = DateTime.UtcNow;
     public string Description { get; set; } = null!;
     public string Destination { get; set; } = null!;
     public int ShipmentStatusId { get; set; } = 1;
     public string Receivedby { get; set; } = null!;
-    public DateTime? ReceivedAt { get; set; }
+    public DateTime? ReceivedAt { get; set; } = null;
 
     public Customer Customer { get; set; } = null!;
     public User User { get; set; } = null!; 
@@ -37,6 +37,21 @@ public class Shipment
         Destination = destination;
         ShipmentStatusId = shipmentStatusId;
         Receivedby = receivedby;
+    }
+
+    public Shipment(
+        int customerId,
+        int userId,
+        string trackingNumber,
+        string description,
+        string destination
+    )
+    {
+        CustomerId = customerId;
+        UserId = userId;
+        TrackingNumber = trackingNumber;
+        Description = description;
+        Destination = destination;
     }
 
     public void MarkAsDelivered(DateTime receivedAt)
