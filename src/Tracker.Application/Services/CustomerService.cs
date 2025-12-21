@@ -29,11 +29,8 @@ namespace Tracker.Application.Services
         public async Task<CustomerDto> GetCustomerByIdAsync(int customerId)
         {
             var customer = await _unitOfWork.CustomersRepository.GetCustomerByIdAsync(customerId);
-            Console.WriteLine("Debug: Retrieved customer is " + (customer == null ? "null" : "not null"));
-            if (customer == null)
-            
+            if (customer == null)            
             {
-                Console.WriteLine($"Debug: Customer with ID {customerId} not found.");
                 throw new NotFoundException(customerId, "Customer");
             }
             return _mapper.Map<CustomerDto>(customer);

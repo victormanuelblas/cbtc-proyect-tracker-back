@@ -82,11 +82,16 @@ namespace Tracker.Application.Services
         public async Task<ShipmentDto> UpdateShipmentStatusAsync(int shipmentId, UpdateShipmentStatusDto updateShipmentStatusDto)
         {
             var shipment = await _unitOfWork.ShipmentsRepository.GetShipmentByIdAsync(shipmentId);
+            
             if (shipment == null)
             {
                 throw new NotFoundException(shipmentId, "Shipment");
             }
-            _mapper.Map(updateShipmentStatusDto, shipment);
+            //_mapper.Map(updateShipmentStatusDto, shipment);
+            shipment.ShipmentStatusId = updateShipmentStatusDto.ShipmentStatus;
+            shipment.Receivedby = updateShipmentStatusDto.ReceivedBy;
+            shipment.ReceivedAt = updateShipmentStatusDto.ReceivedAt;
+            
             await _unitOfWork.ShipmentsRepository.UpdateShipmentAsync(shipment);
             return _mapper.Map<ShipmentDto>(shipment);
         }

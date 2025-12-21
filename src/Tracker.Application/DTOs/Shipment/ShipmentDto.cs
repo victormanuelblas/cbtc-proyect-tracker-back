@@ -9,7 +9,7 @@ namespace Tracker.Application.DTOs.Shipment
         public string Destination { get; set; }
         public string ReceivedBy { get; set; }
         public DateTime? ReceivedAt { get; set; }
-        public string ShipmentStatus { get; set; }
+        public string ShipmentStatusDescription { get; set; }
         public string CustomerName { get; set; }
         public string UserName { get; set; }
 

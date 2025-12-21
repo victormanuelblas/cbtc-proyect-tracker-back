@@ -56,7 +56,8 @@ namespace Tracker.Infrastructure.Persistence.Configurations
             builder.HasOne(s => s.Customer)
                 .WithMany()
                 .HasForeignKey(s => s.CustomerId)
-                .OnDelete(DeleteBehavior.Restrict); 
+                .OnDelete(DeleteBehavior.Restrict);
+                 
             builder.HasOne(s => s.User)
                 .WithMany()
                 .HasForeignKey(s => s.UserId)

@@ -53,5 +53,11 @@ namespace Tracker.Api.Controllers
             var shipments = await _shipmentService.GetAllShipmentsAsync();
             return Ok(shipments);
         }
+        [HttpPatch("{shipmentId}/status")]
+        public async Task<IActionResult> UpdateShipmentStatus(int shipmentId, [FromBody] UpdateShipmentStatusDto updateShipmentStatusDto)
+        {
+            var shipmentDto = await _shipmentService.UpdateShipmentStatusAsync(shipmentId, updateShipmentStatusDto);
+            return Ok(shipmentDto);
+        }
     }
 }

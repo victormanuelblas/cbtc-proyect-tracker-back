@@ -23,12 +23,19 @@ namespace Tracker.Infrastructure.Persistence.Repositories
         public async Task<Shipment?> GetShipmentByIdAsync(int id)
         {
             return await _context.Shipments
-                .FindAsync(id);
+                .Include(s => s.Customer)
+                .Include(s => s.User)
+                .Include(s => s.ShipmentStatus)
+                .FirstOrDefaultAsync(s => s.ShipmentId == id);
         }
 
         public async Task<IEnumerable<Shipment>> GetAllShipmentsAsync()
         {
-            return await _context.Shipments.ToListAsync();
+            return await _context.Shipments
+                .Include(s => s.Customer)
+                .Include(s => s.User)
+                .Include(s => s.ShipmentStatus)
+                .ToListAsync();
         }
 
         public async Task UpdateShipmentAsync(Shipment shipment)
