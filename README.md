@@ -1,5 +1,7 @@
-## Proyecto Tracker
+## Proyecto Final Tracker
 Curso: Desarrollo de Servicio Web 1
+
+Backend con estructura hexagonal hecho .Net.
 
 #### Mysql:
 ```sql
