@@ -7,6 +7,7 @@ namespace Tracker.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ShipmentController : ControllerBase
     {
         private readonly IShipmentService _shipmentService;

@@ -2,11 +2,13 @@ using Tracker.Application.DTOs.User;
 using Tracker.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Tracker.Domain.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Tracker.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
