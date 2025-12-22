@@ -4,6 +4,7 @@ using Tracker.Domain.Ports.Out;
 using Tracker.Domain.Exceptions;
 using Tracker.Application.DTOs.User;
 using Tracker.Application.Interfaces;
+using BCrypt.Net;
 
 namespace Tracker.Application.Services
 {
@@ -20,7 +21,16 @@ namespace Tracker.Application.Services
 
         public async Task<UserDto> CreateUserAsync(CreateUserDto createUserDto)
         {
+            var existUser = await _unitOfWork.UsersRepository.GetUserByEmailAsync(createUserDto.Email);
+            if (existUser != null)
+            {
+                throw new DuplicateEntityException("User", "Email", createUserDto.Email);
+            }
+
+            var passwordHash = BCrypt.Net.BCrypt.HashPassword(createUserDto.PasswordHash);
+            createUserDto.PasswordHash = passwordHash;
             var user = _mapper.Map<User>(createUserDto);
+
             await _unitOfWork.UsersRepository.SaveUserAsync(user);
             await _unitOfWork.CommitTransactionAsync();
             return _mapper.Map<UserDto>(user);
@@ -47,6 +57,16 @@ namespace Tracker.Application.Services
             {
                 throw new NotFoundException(userId, "User");
             }
+
+            var existUser = await _unitOfWork.UsersRepository.GetUserByEmailAsync(updateUserDto.Email);
+            if (existUser != null && existUser.UserId != userId)
+            {
+                throw new DuplicateEntityException("User", "Email", updateUserDto.Email);
+            }
+
+            var passwordHash = updateUserDto.PasswordHash != null ? BCrypt.Net.BCrypt.HashPassword(updateUserDto.PasswordHash) : user.PasswordHash;
+            updateUserDto.PasswordHash = passwordHash;
+
             _mapper.Map(updateUserDto, user);
             await _unitOfWork.UsersRepository.UpdateUserAsync(user);
             return _mapper.Map<UserDto>(user);

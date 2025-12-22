@@ -14,6 +14,7 @@ namespace Tracker.Application
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IShipmentService, ShipmentService>();
+            services.AddScoped<IAuthService, AuthService>();
 
             return services;
         }
