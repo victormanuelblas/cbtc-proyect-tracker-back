@@ -5,9 +5,9 @@ Backend con estructura hexagonal hecho .Net.
 
 #### 1) Seeding with Mysql:
 ```sql
--- DROP DATABASE IF EXISTS tracker;
--- CREATE DATABASE tracker;
-USE tracker;
+-- DROP DATABASE IF EXISTS tracker_db;
+-- CREATE DATABASE tracker_db;
+USE tracker_db;
 
 INSERT INTO tracker_db.customer_types VALUES (1,'regular');
 INSERT INTO tracker_db.customer_types VALUES (2,'vip');
