@@ -2,6 +2,8 @@ using Tracker.Application.DTOs.Shipment;
 using Tracker.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Tracker.Domain.Exceptions;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace Tracker.Api.Controllers
 {
