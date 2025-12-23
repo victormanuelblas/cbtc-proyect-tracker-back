@@ -1,11 +1,21 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Tracker.Application.DTOs.User
 {
     public class UpdateUserDto
     {
-        public string PasswordHash { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
+        [Required]
+        [StringLength(100, MinimumLength = 6)]
+        public string PasswordHash { get; set; } = null!;
+        [Required]
+        [StringLength(100)]
+        public string Name { get; set; } = null!;
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }  = null!;
         public bool IsActive { get; set; }
-        public string Role { get; set; }
+        [Required]
+        [StringLength(20)]
+        public string Role { get; set; } = null!;
     }
 }

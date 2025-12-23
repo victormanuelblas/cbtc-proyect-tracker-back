@@ -2,6 +2,7 @@ using Tracker.Application.DTOs.Shipment;
 using Tracker.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Tracker.Domain.Exceptions;
+using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 
 

@@ -7,10 +7,16 @@ public class CreateCustomerDto
 	[Required]
 	[StringLength(100, MinimumLength = 2)]
 	public string Name { get; set; } = null!;
+	
+	[Required]
+    [StringLength(20)]
+    public string DocmNumber { get; set; } = null!;
 
 	[Required]
 	[EmailAddress]
 	public string Email { get; set; } = null!;
+
+	public string? Phone { get; set; }
 
 	[Required]
 	public int CustomerTypeId { get; set; }

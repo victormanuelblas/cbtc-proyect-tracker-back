@@ -3,8 +3,13 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+# Ignorar migraciones
+migrations/
+
 # dotenv files
 .env
+
+global.json
 
 # User-specific files
 *.rsuser

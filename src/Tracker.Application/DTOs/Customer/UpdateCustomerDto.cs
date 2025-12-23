@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Tracker.Application.DTOs.Customer
 {
     public class UpdateCustomerDto
