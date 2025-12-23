@@ -12,6 +12,7 @@ var envFilePath = Path.Combine(currentDir, ".env");
 if (File.Exists(envFilePath))
 {
     Env.Load(envFilePath);
+    Console.WriteLine(".env loaded!");
 }
 else
 {
