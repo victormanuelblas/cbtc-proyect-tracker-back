@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Tracker.Domain.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
+using System.Security.Claims;
 
 namespace Tracker.Api.Controllers
 {
