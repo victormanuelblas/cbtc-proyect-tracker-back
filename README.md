@@ -3,7 +3,18 @@ Curso: Desarrollo de Servicio Web 1
 
 Backend con estructura hexagonal hecho .Net.
 
-#### 1) Seeding with Mysql:
+#### 1)  Seeding with Entity Framework:
+
+```
+dotnet tool restore
+dotnet restore
+dotnet ef database update \
+	--project src/Tracker.Infrastructure \
+	--startup-project src/Tracker.Api
+```
+
+
+#### ~~1) Seeding with Mysql:~~ (old)
 ```sql
 -- DROP DATABASE IF EXISTS tracker_db;
 -- CREATE DATABASE tracker_db;
@@ -22,6 +33,7 @@ INSERT INTO tracker_db.shipment_statuses VALUES (4,'LlegadaDestino');
 INSERT INTO tracker_db.shipment_statuses VALUES (5,'Entregado');
 INSERT INTO tracker_db.shipment_statuses VALUES (6,'Devuelto');
 ```
+
 #### 2) Place .env inside Tracker.Api
 
 5 required keys. Placeholder values
