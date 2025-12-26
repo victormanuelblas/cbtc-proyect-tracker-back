@@ -182,6 +182,7 @@ namespace Tracker.Api.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAllShipments()
         {
