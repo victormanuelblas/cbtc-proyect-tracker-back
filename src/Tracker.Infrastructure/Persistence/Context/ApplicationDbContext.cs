@@ -25,6 +25,24 @@ namespace Tracker.Infrastructure.Persistence.Context
             modelBuilder.ApplyConfiguration(new ShipmentStatusConfiguration());
             modelBuilder.ApplyConfiguration(new CustomerTypeConfiguration());
 
+
+            modelBuilder.Entity<ShipmentStatus>().HasData(
+                new { ShipmentStatusId = 1, Description = "Habilitado" },
+                new { ShipmentStatusId = 2, Description = "Empaquetado" },
+                new { ShipmentStatusId = 3, Description = "En Tránsito" },
+                new { ShipmentStatusId = 4, Description = "LlegadaDestino" },
+                new { ShipmentStatusId = 5, Description = "Entregado" },
+                new { ShipmentStatusId = 6, Description = "Devuelto" }
+            );
+
+            modelBuilder.Entity<CustomerType>().HasData(
+                new { CustomerTypeId = 1, Description = "regular" },
+                new { CustomerTypeId = 2, Description = "vip" }
+            );
+
+
+
+
             base.OnModelCreating(modelBuilder);
         }
     }
