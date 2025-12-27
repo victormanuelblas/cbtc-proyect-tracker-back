@@ -46,6 +46,16 @@ namespace Tracker.Infrastructure.Migrations
                         {
                             CustomerTypeId = 2,
                             Description = "vip"
+                        },
+                        new
+                        {
+                            CustomerTypeId = 3,
+                            Description = "gold"
+                        },
+                        new
+                        {
+                            CustomerTypeId = 4,
+                            Description = "platinum"
                         });
                 });
 

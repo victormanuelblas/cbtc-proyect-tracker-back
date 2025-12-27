@@ -146,7 +146,9 @@ namespace Tracker.Infrastructure.Migrations
                 values: new object[,]
                 {
                     { 1, "regular" },
-                    { 2, "vip" }
+                    { 2, "vip" },
+                    { 3, "gold" },
+                    { 4, "platinum" }
                 });
 
             migrationBuilder.InsertData(

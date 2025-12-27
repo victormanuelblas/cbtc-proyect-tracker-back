@@ -11,7 +11,7 @@ using Tracker.Infrastructure.Persistence.Context;
 namespace Tracker.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251227010820_InitialWithSeedData")]
+    [Migration("20251227172901_InitialWithSeedData")]
     partial class InitialWithSeedData
     {
         /// <inheritdoc />
@@ -49,6 +49,16 @@ namespace Tracker.Infrastructure.Migrations
                         {
                             CustomerTypeId = 2,
                             Description = "vip"
+                        },
+                        new
+                        {
+                            CustomerTypeId = 3,
+                            Description = "gold"
+                        },
+                        new
+                        {
+                            CustomerTypeId = 4,
+                            Description = "platinum"
                         });
                 });
 
