@@ -9,7 +9,27 @@ Backend con estructura hexagonal hecho .Net.
 
 ## After cloning:
 
-#### 1)  Load inserts with Entity Framework:
+
+#### 1) Place .env inside Tracker.Api
+
+5 + 3 required keys
+
+```
+DB_SERVER=localhost
+DB_PORT=3306
+DB_NAME=tracker
+DB_USER={}
+DB_PASSWORD={}
+
+JWT_SECRET="this-is-a-very-secure-secret-key-with-at-least-32-characters"
+JWT_ISSUER="TrackerApi"
+JWT_AUDIENCE="TrackerClient"
+
+```
+
+#### 2)  Load inserts with Entity Framework:
+
+You can look the inserted data at ApplicationDbContext.cs
 
 ```
 dotnet tool restore
@@ -20,7 +40,7 @@ dotnet ef database update \
 ```
 
 
-#### ~~1) Seeding with Mysql:~~ (old)
+#### ~~2) Seeding with Mysql:~~ (old)
 ```sql
 -- DROP DATABASE IF EXISTS tracker_db;
 -- CREATE DATABASE tracker_db;
@@ -40,22 +60,6 @@ INSERT INTO tracker_db.shipment_statuses VALUES (5,'Entregado');
 INSERT INTO tracker_db.shipment_statuses VALUES (6,'Devuelto');
 ```
 
-#### 2) Place .env inside Tracker.Api
-
-5 - 3 required keys
-
-```
-DB_SERVER=localhost
-DB_PORT=3306
-DB_NAME=tracker
-DB_USER={}
-DB_PASSWORD={}
-
-JWT_SECRET="this-is-a-very-secure-secret-key-with-at-least-32-characters"
-JWT_ISSUER="TrackerApi"
-JWT_AUDIENCE="TrackerClient"
-
-```
 
 
 #### 3) Run:
