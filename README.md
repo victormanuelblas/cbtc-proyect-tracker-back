@@ -3,6 +3,10 @@ Curso: Desarrollo de Servicio Web 1
 
 Backend con estructura hexagonal hecho .Net.
 
+<img width="1846" height="1026" alt="Image" src="https://github.com/user-attachments/assets/1cc161c8-28a3-48b0-b385-6373c76759f9" />
+<img width="1846" height="1026" alt="Image" src="https://github.com/user-attachments/assets/85211fb8-de92-4ba1-867d-dc4ad2887123" />
+<img width="1846" height="1026" alt="Image" src="https://github.com/user-attachments/assets/5737bd6e-0a41-4c5f-8895-794d7ef6e88a" />
+
 ## After cloning:
 
 #### 1)  Load inserts with Entity Framework:
