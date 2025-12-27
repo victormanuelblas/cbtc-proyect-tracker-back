@@ -3,7 +3,9 @@ Curso: Desarrollo de Servicio Web 1
 
 Backend con estructura hexagonal hecho .Net.
 
-#### 1)  Seeding with Entity Framework:
+## After cloning:
+
+#### 1)  Load inserts with Entity Framework:
 
 ```
 dotnet tool restore
