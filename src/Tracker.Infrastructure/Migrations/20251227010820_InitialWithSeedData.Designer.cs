@@ -11,7 +11,7 @@ using Tracker.Infrastructure.Persistence.Context;
 namespace Tracker.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251226234310_InitialWithSeedData")]
+    [Migration("20251227010820_InitialWithSeedData")]
     partial class InitialWithSeedData
     {
         /// <inheritdoc />
@@ -359,6 +359,349 @@ namespace Tracker.Infrastructure.Migrations
                             ShipmentStatusId = 3,
                             ShippedAt = new DateTime(2024, 12, 26, 14, 20, 0, 0, DateTimeKind.Utc),
                             TrackingNumber = "TRK-2024-008",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 9,
+                            CustomerId = 2,
+                            Description = "Accesorios de red - Cables UTP Cat6",
+                            Destination = "Jr. Lampa 456, Cercado de Lima, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 1,
+                            ShippedAt = new DateTime(2024, 12, 26, 15, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-009",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 10,
+                            CustomerId = 5,
+                            Description = "Papel Bond A4 - 100 millares",
+                            Destination = "Av. Venezuela 555, Breña, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 2,
+                            ShippedAt = new DateTime(2024, 12, 27, 9, 30, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-010",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 11,
+                            CustomerId = 3,
+                            Description = "Tarjetas gráficas NVIDIA RTX - 5 unidades",
+                            Destination = "Av. Industrial 789, Callao",
+                            Receivedby = "",
+                            ShipmentStatusId = 3,
+                            ShippedAt = new DateTime(2024, 12, 24, 16, 45, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-011",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 12,
+                            CustomerId = 1,
+                            Description = "Servidores Rack 1U - 2 unidades",
+                            Destination = "Av. Arequipa 1234, Miraflores, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 4,
+                            ShippedAt = new DateTime(2024, 12, 22, 11, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-012",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 13,
+                            CustomerId = 4,
+                            Description = "Zapatillas deportivas - Regalo",
+                            Destination = "Calle Los Robles 321, San Isidro, Lima",
+                            ReceivedAt = new DateTime(2024, 12, 21, 10, 15, 0, 0, DateTimeKind.Utc),
+                            Receivedby = "Carlos Ramírez",
+                            ShipmentStatusId = 5,
+                            ShippedAt = new DateTime(2024, 12, 20, 14, 20, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-013",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 14,
+                            CustomerId = 6,
+                            Description = "Lote de cosméticos",
+                            Destination = "Av. Javier Prado 999, San Borja, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 1,
+                            ShippedAt = new DateTime(2024, 12, 27, 8, 10, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-014",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 15,
+                            CustomerId = 2,
+                            Description = "Tablets Lenovo 10 pulgadas - 20 unidades",
+                            Destination = "Jr. Lampa 456, Cercado de Lima, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 3,
+                            ShippedAt = new DateTime(2024, 12, 25, 13, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-015",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 16,
+                            CustomerId = 5,
+                            Description = "Útiles de escritorio al por mayor",
+                            Destination = "Av. Venezuela 555, Breña, Lima",
+                            ReceivedAt = new DateTime(2024, 12, 20, 9, 30, 0, 0, DateTimeKind.Utc),
+                            Receivedby = "Jefe Almacén",
+                            ShipmentStatusId = 5,
+                            ShippedAt = new DateTime(2024, 12, 19, 10, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-016",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 17,
+                            CustomerId = 1,
+                            Description = "Proyectores Epson - 4 unidades",
+                            Destination = "Av. Arequipa 1234, Miraflores, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 2,
+                            ShippedAt = new DateTime(2024, 12, 26, 17, 30, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-017",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 18,
+                            CustomerId = 3,
+                            Description = "Memorias RAM DDR5 32GB - 50 unidades",
+                            Destination = "Av. Industrial 789, Callao",
+                            Receivedby = "",
+                            ShipmentStatusId = 4,
+                            ShippedAt = new DateTime(2024, 12, 23, 15, 45, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-018",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 19,
+                            CustomerId = 4,
+                            Description = "Colección de libros de historia",
+                            Destination = "Calle Los Robles 321, San Isidro, Lima",
+                            ReceivedAt = new DateTime(2024, 12, 18, 16, 20, 0, 0, DateTimeKind.Utc),
+                            Receivedby = "Portería",
+                            ShipmentStatusId = 5,
+                            ShippedAt = new DateTime(2024, 12, 18, 9, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-019",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 20,
+                            CustomerId = 6,
+                            Description = "Ropa de invierno - Devolución",
+                            Destination = "Av. Javier Prado 999, San Borja, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 6,
+                            ShippedAt = new DateTime(2024, 12, 21, 11, 15, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-020",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 21,
+                            CustomerId = 2,
+                            Description = "Cámaras de seguridad IP - Kit completo",
+                            Destination = "Jr. Lampa 456, Cercado de Lima, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 1,
+                            ShippedAt = new DateTime(2024, 12, 27, 10, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-021",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 22,
+                            CustomerId = 5,
+                            Description = "Detergente industrial - 20 bolsas",
+                            Destination = "Av. Venezuela 555, Breña, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 2,
+                            ShippedAt = new DateTime(2024, 12, 27, 12, 30, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-022",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 23,
+                            CustomerId = 1,
+                            Description = "Licencias de Software en físico",
+                            Destination = "Av. Arequipa 1234, Miraflores, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 3,
+                            ShippedAt = new DateTime(2024, 12, 24, 14, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-023",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 24,
+                            CustomerId = 3,
+                            Description = "Discos Duros 4TB NAS - 10 unidades",
+                            Destination = "Av. Industrial 789, Callao",
+                            ReceivedAt = new DateTime(2024, 12, 22, 11, 10, 0, 0, DateTimeKind.Utc),
+                            Receivedby = "Seguridad Almacén",
+                            ShipmentStatusId = 5,
+                            ShippedAt = new DateTime(2024, 12, 20, 8, 45, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-024",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 25,
+                            CustomerId = 4,
+                            Description = "Juguetes varios para donación",
+                            Destination = "Calle Los Robles 321, San Isidro, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 4,
+                            ShippedAt = new DateTime(2024, 12, 23, 18, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-025",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 26,
+                            CustomerId = 6,
+                            Description = "Accesorios de cocina - Ollas y sartenes",
+                            Destination = "Av. Javier Prado 999, San Borja, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 1,
+                            ShippedAt = new DateTime(2024, 12, 27, 14, 20, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-026",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 27,
+                            CustomerId = 2,
+                            Description = "Monitores Curvos 27'' - 6 unidades",
+                            Destination = "Jr. Lampa 456, Cercado de Lima, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 3,
+                            ShippedAt = new DateTime(2024, 12, 25, 10, 10, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-027",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 28,
+                            CustomerId = 5,
+                            Description = "Café en grano selección - 20kg",
+                            Destination = "Av. Venezuela 555, Breña, Lima",
+                            ReceivedAt = new DateTime(2024, 12, 22, 8, 45, 0, 0, DateTimeKind.Utc),
+                            Receivedby = "Recepcionista",
+                            ShipmentStatusId = 5,
+                            ShippedAt = new DateTime(2024, 12, 21, 9, 30, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-028",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 29,
+                            CustomerId = 1,
+                            Description = "Laptops HP Omen Gaming - 2 unidades",
+                            Destination = "Av. Arequipa 1234, Miraflores, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 2,
+                            ShippedAt = new DateTime(2024, 12, 26, 16, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-029",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 30,
+                            CustomerId = 3,
+                            Description = "Procesadores Intel i9 - Defectuosos",
+                            Destination = "Av. Industrial 789, Callao",
+                            Receivedby = "",
+                            ShipmentStatusId = 6,
+                            ShippedAt = new DateTime(2024, 12, 19, 13, 15, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-030",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 31,
+                            CustomerId = 4,
+                            Description = "Documentos legales urgentes",
+                            Destination = "Calle Los Robles 321, San Isidro, Lima",
+                            ReceivedAt = new DateTime(2024, 12, 22, 15, 30, 0, 0, DateTimeKind.Utc),
+                            Receivedby = "Pedro Sánchez",
+                            ShipmentStatusId = 5,
+                            ShippedAt = new DateTime(2024, 12, 22, 11, 45, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-031",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 32,
+                            CustomerId = 6,
+                            Description = "Muebles pequeños (Mesas de noche)",
+                            Destination = "Av. Javier Prado 999, San Borja, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 1,
+                            ShippedAt = new DateTime(2024, 12, 27, 9, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-032",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 33,
+                            CustomerId = 2,
+                            Description = "Audífonos Bluetooth Noise Cancelling",
+                            Destination = "Jr. Lampa 456, Cercado de Lima, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 3,
+                            ShippedAt = new DateTime(2024, 12, 24, 15, 30, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-033",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 34,
+                            CustomerId = 5,
+                            Description = "Cajas de galletas y snacks",
+                            Destination = "Av. Venezuela 555, Breña, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 4,
+                            ShippedAt = new DateTime(2024, 12, 23, 10, 20, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-034",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 35,
+                            CustomerId = 1,
+                            Description = "Estabilizadores de voltaje industriales",
+                            Destination = "Av. Arequipa 1234, Miraflores, Lima",
+                            ReceivedAt = new DateTime(2024, 12, 21, 14, 0, 0, 0, DateTimeKind.Utc),
+                            Receivedby = "Roberto Mendoza",
+                            ShipmentStatusId = 5,
+                            ShippedAt = new DateTime(2024, 12, 20, 11, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-035",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 36,
+                            CustomerId = 3,
+                            Description = "Placas madre ASUS ROG - 8 unidades",
+                            Destination = "Av. Industrial 789, Callao",
+                            Receivedby = "",
+                            ShipmentStatusId = 2,
+                            ShippedAt = new DateTime(2024, 12, 27, 16, 45, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-036",
                             UserId = 2
                         });
                 });
