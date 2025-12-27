@@ -11,7 +11,7 @@ using Tracker.Infrastructure.Persistence.Context;
 namespace Tracker.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251227172901_InitialWithSeedData")]
+    [Migration("20251227191142_InitialWithSeedData")]
     partial class InitialWithSeedData
     {
         /// <inheritdoc />
@@ -239,7 +239,6 @@ namespace Tracker.Infrastructure.Migrations
                         .HasColumnName("received_at");
 
                     b.Property<string>("Receivedby")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)")
                         .HasColumnName("received_by");

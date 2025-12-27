@@ -236,7 +236,6 @@ namespace Tracker.Infrastructure.Migrations
                         .HasColumnName("received_at");
 
                     b.Property<string>("Receivedby")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)")
                         .HasColumnName("received_by");

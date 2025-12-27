@@ -10,7 +10,7 @@ public class Shipment
     public string Description { get; set; } = null!;
     public string Destination { get; set; } = null!;
     public int ShipmentStatusId { get; set; } = 1;
-    public string Receivedby { get; set; } = null!;
+    public string? Receivedby { get; set; } = null!;
     public DateTime? ReceivedAt { get; set; } = null;
 
     public Customer Customer { get; set; } = null!;
@@ -54,9 +54,26 @@ public class Shipment
         Destination = destination;
     }
 
-    public void MarkAsDelivered(DateTime receivedAt)
+    // public void MarkAsDelivered(DateTime receivedAt)
+    // {
+    //     ShipmentStatusId = 3; // ENTREGADO (luego lo refinamos)
+    //     ReceivedAt = receivedAt;
+    // }
+
+    public void UpdateStatus(int statusId, string? receivedBy, DateTime? receivedAt)
     {
-        ShipmentStatusId = 3; // ENTREGADO (luego lo refinamos)
-        ReceivedAt = receivedAt;
+        ShipmentStatusId = statusId;
+
+        if (statusId == 5) // Entregado
+        {
+            Receivedby = receivedBy;
+            ReceivedAt = receivedAt ?? DateTime.UtcNow;
+        }
+        else
+        {
+            Receivedby = null;
+            ReceivedAt = null;
+        }
     }
+
 }

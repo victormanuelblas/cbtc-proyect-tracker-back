@@ -112,7 +112,7 @@ namespace Tracker.Infrastructure.Migrations
                     destination = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     shipment_status_id = table.Column<int>(type: "int", nullable: false),
-                    received_by = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                    received_by = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     received_at = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },
