@@ -73,7 +73,7 @@ info: Microsoft.Hosting.Lifetime[14]
 
 ```
 
-#### Optional)
+#### Extra )
 
 You can also confirm data exists from your mysql:
 ```
@@ -84,4 +84,13 @@ SELECT * FROM customer_types;
 SELECT * FROM customers;
 SELECT * FROM shipments;
 SELECT * FROM users;
+```
+Para logearse:
+- Email: 
+- Password: password
+```
+1	Admin User	admin@tracker.com	$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq	3	1
+2	Juan Pérez	juan.perez@tracker.com	$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq	2	1
+3	María González	maria.gonzalez@tracker.com	$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq	1	1
+4	Carlos Ramírez	carlos.ramirez@tracker.com	$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq	1	1
 ```
