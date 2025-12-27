@@ -42,25 +42,24 @@ INSERT INTO tracker_db.shipment_statuses VALUES (6,'Devuelto');
 
 #### 2) Place .env inside Tracker.Api
 
-5 required keys. Placeholder values
+5 - 3 required keys
 
 ```
 DB_SERVER=localhost
 DB_PORT=3306
 DB_NAME=tracker
-DB_USER=
-DB_PASSWORD=
+DB_USER={}
+DB_PASSWORD={}
+
+JWT_SECRET="this-is-a-very-secure-secret-key-with-at-least-32-characters"
+JWT_ISSUER="TrackerApi"
+JWT_AUDIENCE="TrackerClient"
 
 ```
 
 
 #### 3) Run:
-```
-export JWT_SECRET="this-is-a-very-secure-secret-key-with-at-least-32-characters"
-export JWT_ISSUER="TrackerApi"
-export JWT_AUDIENCE="TrackerClient"
-```
-Then:
+
 ```
 dotnet run --project src/Tracker.Api
 ```
