@@ -62,12 +62,15 @@ namespace Tracker.Api.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(
-                    ex,
-                    "Error during login process for user: {Email}",
-                    loginDto.Email);
 
-                return StatusCode(500, new { message = "Internal server error" });
+              _logger.LogError(
+                  ex,
+                  "Error during login process for user: {Email}. Exception Type: {ExceptionType}, Message: {ErrorMessage}",
+                  loginDto.Email,
+                  ex.GetType().Name,
+                  ex.Message);
+              return StatusCode(500, new { message = "Internal server error", detail = ex.Message });
+
             }
         }
     }

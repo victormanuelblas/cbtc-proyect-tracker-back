@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Tracker.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialWithSeedData : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -160,6 +160,45 @@ namespace Tracker.Infrastructure.Migrations
                     { 4, "LlegadaDestino" },
                     { 5, "Entregado" },
                     { 6, "Devuelto" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "users",
+                columns: new[] { "user_id", "email", "is_active", "name", "password_hash", "role" },
+                values: new object[,]
+                {
+                    { 1, "admin@tracker.com", true, "Admin User", "$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq", 3 },
+                    { 2, "juan.perez@tracker.com", true, "Juan Pérez", "$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq", 2 },
+                    { 3, "maria.gonzalez@tracker.com", true, "María González", "$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq", 1 },
+                    { 4, "carlos.ramirez@tracker.com", true, "Carlos Ramírez", "$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq", 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "customers",
+                columns: new[] { "customer_id", "customer_type_id", "docm_number", "email", "name", "phone" },
+                values: new object[,]
+                {
+                    { 1, 2, "20123456789", "contacto@acme.com", "Acme Corporation", "+51987654321" },
+                    { 2, 1, "20234567890", "ventas@techstore.pe", "TechStore SAC", "+51976543210" },
+                    { 3, 2, "20345678901", "info@globalimports.com", "Global Imports EIRL", "+51965432109" },
+                    { 4, 1, "12345678", "pedro.sanchez@email.com", "Pedro Sánchez", "+51954321098" },
+                    { 5, 1, "20456789012", "ventas@distrilima.pe", "Distribuidora Lima SAC", "+51943210987" },
+                    { 6, 1, "23456789", "ana.torres@email.com", "Ana Torres", "+51932109876" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "shipments",
+                columns: new[] { "shipment_id", "customer_id", "description", "destination", "received_at", "received_by", "shipment_status_id", "shipped_at", "tracking_number", "user_id" },
+                values: new object[,]
+                {
+                    { 1, 1, "Equipos de cómputo - 5 laptops Dell", "Av. Arequipa 1234, Miraflores, Lima", new DateTime(2024, 12, 22, 14, 15, 0, 0, DateTimeKind.Utc), "Roberto Mendoza", 5, new DateTime(2024, 12, 20, 10, 30, 0, 0, DateTimeKind.Utc), "TRK-2024-001", 2 },
+                    { 2, 2, "Smartphones Samsung Galaxy - 10 unidades", "Jr. Lampa 456, Cercado de Lima, Lima", null, "", 3, new DateTime(2024, 12, 23, 8, 0, 0, 0, DateTimeKind.Utc), "TRK-2024-002", 3 },
+                    { 3, 3, "Componentes electrónicos importados", "Av. Industrial 789, Callao", null, "", 4, new DateTime(2024, 12, 24, 9, 15, 0, 0, DateTimeKind.Utc), "TRK-2024-003", 2 },
+                    { 4, 4, "Paquete personal - Documentos", "Calle Los Robles 321, San Isidro, Lima", null, "", 2, new DateTime(2024, 12, 25, 11, 45, 0, 0, DateTimeKind.Utc), "TRK-2024-004", 4 },
+                    { 5, 5, "Productos de limpieza - 50 cajas", "Av. Venezuela 555, Breña, Lima", null, "", 1, new DateTime(2024, 12, 26, 7, 30, 0, 0, DateTimeKind.Utc), "TRK-2024-005", 3 },
+                    { 6, 1, "Impresoras HP LaserJet - 3 unidades", "Av. Arequipa 1234, Miraflores, Lima", new DateTime(2024, 12, 19, 16, 30, 0, 0, DateTimeKind.Utc), "Roberto Mendoza", 5, new DateTime(2024, 12, 18, 13, 0, 0, 0, DateTimeKind.Utc), "TRK-2024-006", 2 },
+                    { 7, 6, "Paquete personal - Ropa", "Av. Javier Prado 999, San Borja, Lima", null, "", 6, new DateTime(2024, 12, 15, 10, 0, 0, 0, DateTimeKind.Utc), "TRK-2024-007", 4 },
+                    { 8, 3, "Repuestos automotrices - Caja grande", "Av. Industrial 789, Callao", null, "", 3, new DateTime(2024, 12, 26, 14, 20, 0, 0, DateTimeKind.Utc), "TRK-2024-008", 2 }
                 });
 
             migrationBuilder.CreateIndex(

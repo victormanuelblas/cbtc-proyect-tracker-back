@@ -11,8 +11,8 @@ using Tracker.Infrastructure.Persistence.Context;
 namespace Tracker.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251226201204_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20251226234310_InitialWithSeedData")]
+    partial class InitialWithSeedData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -143,6 +143,62 @@ namespace Tracker.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("customers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerId = 1,
+                            CustomerTypeId = 2,
+                            DocmNumber = "20123456789",
+                            Email = "contacto@acme.com",
+                            Name = "Acme Corporation",
+                            Phone = "+51987654321"
+                        },
+                        new
+                        {
+                            CustomerId = 2,
+                            CustomerTypeId = 1,
+                            DocmNumber = "20234567890",
+                            Email = "ventas@techstore.pe",
+                            Name = "TechStore SAC",
+                            Phone = "+51976543210"
+                        },
+                        new
+                        {
+                            CustomerId = 3,
+                            CustomerTypeId = 2,
+                            DocmNumber = "20345678901",
+                            Email = "info@globalimports.com",
+                            Name = "Global Imports EIRL",
+                            Phone = "+51965432109"
+                        },
+                        new
+                        {
+                            CustomerId = 4,
+                            CustomerTypeId = 1,
+                            DocmNumber = "12345678",
+                            Email = "pedro.sanchez@email.com",
+                            Name = "Pedro Sánchez",
+                            Phone = "+51954321098"
+                        },
+                        new
+                        {
+                            CustomerId = 5,
+                            CustomerTypeId = 1,
+                            DocmNumber = "20456789012",
+                            Email = "ventas@distrilima.pe",
+                            Name = "Distribuidora Lima SAC",
+                            Phone = "+51943210987"
+                        },
+                        new
+                        {
+                            CustomerId = 6,
+                            CustomerTypeId = 1,
+                            DocmNumber = "23456789",
+                            Email = "ana.torres@email.com",
+                            Name = "Ana Torres",
+                            Phone = "+51932109876"
+                        });
                 });
 
             modelBuilder.Entity("Tracker.Domain.Entities.Shipment", b =>
@@ -205,6 +261,106 @@ namespace Tracker.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("shipments", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            ShipmentId = 1,
+                            CustomerId = 1,
+                            Description = "Equipos de cómputo - 5 laptops Dell",
+                            Destination = "Av. Arequipa 1234, Miraflores, Lima",
+                            ReceivedAt = new DateTime(2024, 12, 22, 14, 15, 0, 0, DateTimeKind.Utc),
+                            Receivedby = "Roberto Mendoza",
+                            ShipmentStatusId = 5,
+                            ShippedAt = new DateTime(2024, 12, 20, 10, 30, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-001",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 2,
+                            CustomerId = 2,
+                            Description = "Smartphones Samsung Galaxy - 10 unidades",
+                            Destination = "Jr. Lampa 456, Cercado de Lima, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 3,
+                            ShippedAt = new DateTime(2024, 12, 23, 8, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-002",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 3,
+                            CustomerId = 3,
+                            Description = "Componentes electrónicos importados",
+                            Destination = "Av. Industrial 789, Callao",
+                            Receivedby = "",
+                            ShipmentStatusId = 4,
+                            ShippedAt = new DateTime(2024, 12, 24, 9, 15, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-003",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 4,
+                            CustomerId = 4,
+                            Description = "Paquete personal - Documentos",
+                            Destination = "Calle Los Robles 321, San Isidro, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 2,
+                            ShippedAt = new DateTime(2024, 12, 25, 11, 45, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-004",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 5,
+                            CustomerId = 5,
+                            Description = "Productos de limpieza - 50 cajas",
+                            Destination = "Av. Venezuela 555, Breña, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 1,
+                            ShippedAt = new DateTime(2024, 12, 26, 7, 30, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-005",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShipmentId = 6,
+                            CustomerId = 1,
+                            Description = "Impresoras HP LaserJet - 3 unidades",
+                            Destination = "Av. Arequipa 1234, Miraflores, Lima",
+                            ReceivedAt = new DateTime(2024, 12, 19, 16, 30, 0, 0, DateTimeKind.Utc),
+                            Receivedby = "Roberto Mendoza",
+                            ShipmentStatusId = 5,
+                            ShippedAt = new DateTime(2024, 12, 18, 13, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-006",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShipmentId = 7,
+                            CustomerId = 6,
+                            Description = "Paquete personal - Ropa",
+                            Destination = "Av. Javier Prado 999, San Borja, Lima",
+                            Receivedby = "",
+                            ShipmentStatusId = 6,
+                            ShippedAt = new DateTime(2024, 12, 15, 10, 0, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-007",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShipmentId = 8,
+                            CustomerId = 3,
+                            Description = "Repuestos automotrices - Caja grande",
+                            Destination = "Av. Industrial 789, Callao",
+                            Receivedby = "",
+                            ShipmentStatusId = 3,
+                            ShippedAt = new DateTime(2024, 12, 26, 14, 20, 0, 0, DateTimeKind.Utc),
+                            TrackingNumber = "TRK-2024-008",
+                            UserId = 2
+                        });
                 });
 
             modelBuilder.Entity("Tracker.Domain.Entities.User", b =>
@@ -246,6 +402,44 @@ namespace Tracker.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Email = "admin@tracker.com",
+                            IsActive = true,
+                            Name = "Admin User",
+                            PasswordHash = "$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq",
+                            Role = 3
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            Email = "juan.perez@tracker.com",
+                            IsActive = true,
+                            Name = "Juan Pérez",
+                            PasswordHash = "$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq",
+                            Role = 2
+                        },
+                        new
+                        {
+                            UserId = 3,
+                            Email = "maria.gonzalez@tracker.com",
+                            IsActive = true,
+                            Name = "María González",
+                            PasswordHash = "$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq",
+                            Role = 1
+                        },
+                        new
+                        {
+                            UserId = 4,
+                            Email = "carlos.ramirez@tracker.com",
+                            IsActive = true,
+                            Name = "Carlos Ramírez",
+                            PasswordHash = "$2a$10$U1Et/gitorJ8ogzMkWQl6OoMrqrjUR.iAPG5eRBtZFNBDRSA1XJYq",
+                            Role = 1
+                        });
                 });
 
             modelBuilder.Entity("Tracker.Domain.Entities.Customer", b =>
