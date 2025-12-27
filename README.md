@@ -48,9 +48,15 @@ DB_PASSWORD=
 ```
 
 
-#### 3)Run:
+#### 3) Run:
 ```
-JWT_SECRET="a" JWT_ISSUER="b" JWT_AUDIENCE="c" dotnet run --project src/Tracker.Api
+export JWT_SECRET="this-is-a-very-secure-secret-key-with-at-least-32-characters"
+export JWT_ISSUER="TrackerApi"
+export JWT_AUDIENCE="TrackerClient"
+```
+Then:
+```
+dotnet run --project src/Tracker.Api
 ```
 
 #### 4) Success message:
