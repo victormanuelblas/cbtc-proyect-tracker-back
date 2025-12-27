@@ -37,7 +37,9 @@ namespace Tracker.Infrastructure.Persistence.Context
             
             modelBuilder.Entity<CustomerType>().HasData(
                 new { CustomerTypeId = 1, Description = "regular" },
-                new { CustomerTypeId = 2, Description = "vip" }
+                new { CustomerTypeId = 2, Description = "vip" },
+                new { CustomerTypeId = 3, Description = "gold" },
+                new { CustomerTypeId = 4, Description = "platinum" }
             );
             
             // Seed Users (password "password")
