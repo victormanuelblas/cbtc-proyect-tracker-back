@@ -68,3 +68,16 @@ info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://localhost:5016
 
 ```
+
+#### Optional)
+
+You can also confirm data exists from your mysql:
+```
+USE tracker_db;
+SHOW TABLES;
+SELECT * FROM shipment_statuses;
+SELECT * FROM customer_types;
+SELECT * FROM customers;
+SELECT * FROM shipments;
+SELECT * FROM users;
+```
